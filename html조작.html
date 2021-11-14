@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        #chk_box  {
+            background-color: aqua;
+            border : 1px solid ;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>나태학원 수강 신청서</h1>
+    <label for="stName">이름</label><input type="text" id="stName"><br><br>
+    
+
+    <div>지원 과목 <span id="chk_box" onclick="doCheckToggle(this)">전체체크</span></div>
+    <label for="java">자바<input type="checkbox" name="subject" value="java" id="java"></label>
+    <label for="javascript">자바스크립트<input type="checkbox" name="subject" value="javascript" id="javascript"></label>
+    <label for="c">C<input type="checkbox" name="subject" value="c" id="c"></label>
+    <label for="c++">C++<input type="checkbox" name="subject" value="c++" id="c++"></label>
+    <label for="c#">C#<input type="checkbox" name="subject" value="c#" id="c#"></label>
+    <label for="python">파이썬<input type="checkbox" name="subject" value="python" id="python"></label>
+    
+    <br><br>
+    <div>암수구별</div>
+    <label for="soocut">남자<input type="radio" name="amsoo" value="soocut" id="soocut"></label>
+    <lable for="amcut">여자<input type="radio" name="amsoo" value="amcut" id="amcut"></lable>
+
+    <br><br>
+    <div>5분 어필</div>
+    <textarea style="width: 400px;; height: 100px; resize: none;">
+        
+    </textarea>
+</div>
+
+
+    <script>
+        function doCheckToggle(node) {
+            let hobby = document.querySelectorAll('[name=subject]');
+            for(let i=0; i<hobby.length; i++) {
+                if(hobby[i].checked) {
+                    hobby[i].checked = false;
+                    node.innerText = "전체체크";
+                } else {
+                    hobby[i].checked = true;
+                    node.innerText = "전체해제";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        tr {
+            border : 1px solid dodgerblue;
+        }        
+        th {
+            border : 1px solid dodgerblue;
+        }
+        td {
+            border : 1px solid dodgerblue;
+        }
+
+        .batch {
+            display: inline-block;
+            border : 1px solid red;
+            width: 40%;
+            vertical-align: top;
+        }
+        .center {
+            display: inline-block;
+            /* border : 1px solid red; */
+            width: 10%;
+            /* height: auto; */
+            vertical-align: middle;
+            
+        }
+
+        table {
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>수강신청 수락 하기</h1>
+<div id="left" class="batch">
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="top_chk_L"></th>
+                <th>이름</th>
+                <th>신청과목</th>
+                <th>성별</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="chk_left_L" id="habook"></td>
+                <td>하북이</td>
+                <td>자바스크립트</td>
+                <td>중성화</td>
+                <td>단거잘먹음</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="chk_left_L"></td>
+                <td>키북이</td>
+                <td>파이썬</td>
+                <td>수컷</td>
+                <td>음식잘참음</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="chk_left_L"></td>
+                <td>동견쿤</td>
+                <td>자바스크립트</td>
+                <td>수컷(J)</td>
+                <td>통수잘침</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="center" class="center">
+    <input type="button" value="선택" onclick="doAdd()">
+    <input type="button" value="지우기" onclick="doDelete()">
+
+</div>
+
+
+
+<div id="right" class="batch">
+    <table>
+        <thead>
+            <th><input type="checkbox" name="top_chk_R"></th>
+            <th>이름</th>
+            <th>신청과목</th>
+            <th>성별</th>
+            <th>비고</th>
+        </thead>
+        <tbody id="myTbody">
+            <tr>
+                <td><input type="checkbox" name="chk_right_R"></td>
+                <td>동견쿤</td>
+                <td>자바스크립트</td>
+                <td>수컷(J)</td>
+                <td>통수잘침</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    <script>
+        function doAdd() {
+            var trList = document.querySelector("[name=chk_left_L]:checked");
+            // var trList = document.getElementById("habook").parentNode;
+            
+
+            // console.log(trList);
+            // console.log(trList.parentNode.nextSibling.nextSibling.textContent);
+
+            var name = trList.parentNode.nextSibling.nextSibling.textContent;
+            var jong = trList.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.textContent
+            var beego= trList.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.textContent
+
+            console.log(name);
+            console.log(jong);
+            console.log(beego);
+
+            // let htmlArr = [];
+            // for(let value of trList) {
+            //     htmlArr.push(`<tr>`);
+            //     htmlArr.push(`</tr>`);
+            //     // htmlArr.push(`<td>${value.}</td>`);
+
+
+
+                
+
+            // }
+
+            // let myTbody = document.getElementById("myTbody");
+            // myTbody.innerHTML = htmlArr.join("");
+
+        }
+    </script>
+</body>
+</html>
