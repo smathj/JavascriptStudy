@@ -8,7 +8,7 @@ function create(param) {
         }
     });
 };
-
+// then(f(x),g(x))
 create("ok").then(function(param) {
     console.log("3: 성공 Nice", param);
 },function(param) {
