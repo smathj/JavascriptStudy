@@ -9,7 +9,7 @@ let myKakaoDogs = Promise.resolve(
     }
 );
 
-// (1)
+// (1) 성공했을떄 핸들러 함수를 then으로 작성하는 방식
 myKakaoDogs.then((param) => {
     for(let idx in param) {
         console.log(`${idx} : ${param[idx]}`);
